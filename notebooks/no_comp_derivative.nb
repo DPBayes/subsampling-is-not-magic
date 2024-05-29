@@ -1,0 +1,478 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15805,        470]
+NotebookOptionsPosition[     14607,        442]
+NotebookOutlinePosition[     14996,        458]
+CellTagsIndexPosition[     14953,        455]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"lb1", "[", "q_", "]"}], " ", ":=", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"\[Sigma]", "[", "q", "]"}], "  ", 
+    RowBox[{"Log", "[", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"Exp", "[", "\[Epsilon]", "]"}], "-", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", "q"}], ")"}]}], ")"}], "/", " ", "q"}], "]"}]}], 
+   " ", "-", " ", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"2", 
+      RowBox[{"\[Sigma]", "[", "q", "]"}]}], ")"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.909566811561583*^9, 3.909566889627997*^9}, 
+   3.911899051203147*^9, 3.9155899108860273`*^9, {3.915590099115426*^9, 
+   3.915590111148191*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"c4000de4-bd13-49d4-9cf2-35170e8d9c38"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"lb2", "[", "q_", "]"}], " ", ":=", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"\[Sigma]", "[", "q", "]"}], "  ", 
+    RowBox[{"Log", "[", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"Exp", "[", "\[Epsilon]", "]"}], "-", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", "q"}], ")"}]}], ")"}], "/", " ", "q"}], "]"}]}], 
+   " ", "+", " ", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"2", 
+      RowBox[{"\[Sigma]", "[", "q", "]"}]}], ")"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.909566905464778*^9, 3.9095669087475452`*^9}, {
+  3.915590114167472*^9, 3.915590116117631*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"0aff67c0-3877-4f92-9fb3-4be8c56979d1"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"delta", "[", "q_", "]"}], " ", ":=", " ", 
+  RowBox[{
+   RowBox[{"q", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      RowBox[{"CDF", "[", 
+       RowBox[{
+        RowBox[{"NormalDistribution", "[", 
+         RowBox[{"0", ",", "1"}], "]"}], ",", " ", 
+        RowBox[{"lb1", "[", "q", "]"}]}], "]"}]}], ")"}]}], " ", "+", " ", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"1", "-", "q", "-", 
+      RowBox[{"Exp", "[", "\[Epsilon]", "]"}]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      RowBox[{"CDF", "[", 
+       RowBox[{
+        RowBox[{"NormalDistribution", "[", 
+         RowBox[{"0", ",", "1"}], "]"}], ",", " ", 
+        RowBox[{"lb2", "[", "q", "]"}]}], "]"}]}], ")"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.90956693204534*^9, 3.909567025878726*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"8745fd4d-eeb3-4cbb-b362-37f79aaecc0b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"D", "[", 
+  RowBox[{
+   RowBox[{"delta", "[", "q", "]"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"q", ",", " ", "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.9095670294277678`*^9, 3.9095670341121798`*^9}, {
+  3.9095671427696657`*^9, 3.909567148344408*^9}, {3.90956718078484*^9, 
+  3.9095671809359913`*^9}, {3.909567219292903*^9, 3.909567219361059*^9}, {
+  3.9155896469709663`*^9, 3.915589663702333*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"d54fd647-c92c-40ad-9da7-29c0a1db5ade"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox["1", "2"], " ", 
+   RowBox[{"Erfc", "[", 
+    FractionBox[
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox["1", 
+        RowBox[{"2", " ", 
+         RowBox[{"\[Sigma]", "[", "q", "]"}]}]]}], "-", 
+      RowBox[{
+       RowBox[{"Log", "[", 
+        FractionBox[
+         RowBox[{
+          RowBox[{"-", "1"}], "+", 
+          SuperscriptBox["\[ExponentialE]", "\[Epsilon]"], "+", "q"}], "q"], 
+        "]"}], " ", 
+       RowBox[{"\[Sigma]", "[", "q", "]"}]}]}], 
+     SqrtBox["2"]], "]"}]}], "-", 
+  RowBox[{
+   FractionBox["1", "2"], " ", 
+   RowBox[{"Erfc", "[", 
+    FractionBox[
+     RowBox[{
+      FractionBox["1", 
+       RowBox[{"2", " ", 
+        RowBox[{"\[Sigma]", "[", "q", "]"}]}]], "-", 
+      RowBox[{
+       RowBox[{"Log", "[", 
+        FractionBox[
+         RowBox[{
+          RowBox[{"-", "1"}], "+", 
+          SuperscriptBox["\[ExponentialE]", "\[Epsilon]"], "+", "q"}], "q"], 
+        "]"}], " ", 
+       RowBox[{"\[Sigma]", "[", "q", "]"}]}]}], 
+     SqrtBox["2"]], "]"}]}], "+", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox["1", "2"]}], " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         FractionBox["1", 
+          RowBox[{"2", " ", 
+           RowBox[{"\[Sigma]", "[", "q", "]"}]}]], "-", 
+         RowBox[{
+          RowBox[{"Log", "[", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"-", "1"}], "+", 
+             SuperscriptBox["\[ExponentialE]", "\[Epsilon]"], "+", "q"}], 
+            "q"], "]"}], " ", 
+          RowBox[{"\[Sigma]", "[", "q", "]"}]}]}], ")"}], "2"]}]], " ", "q", 
+    " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"q", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           FractionBox["1", "q"], "-", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"-", "1"}], "+", 
+             SuperscriptBox["\[ExponentialE]", "\[Epsilon]"], "+", "q"}], 
+            SuperscriptBox["q", "2"]]}], ")"}], " ", 
+         RowBox[{"\[Sigma]", "[", "q", "]"}]}], 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", 
+         SuperscriptBox["\[ExponentialE]", "\[Epsilon]"], "+", "q"}]]}], "-", 
+      
+      RowBox[{
+       RowBox[{"Log", "[", 
+        FractionBox[
+         RowBox[{
+          RowBox[{"-", "1"}], "+", 
+          SuperscriptBox["\[ExponentialE]", "\[Epsilon]"], "+", "q"}], "q"], 
+        "]"}], " ", 
+       RowBox[{
+        SuperscriptBox["\[Sigma]", "\[Prime]",
+         MultilineFunction->None], "[", "q", "]"}]}], "-", 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[Sigma]", "\[Prime]",
+         MultilineFunction->None], "[", "q", "]"}], 
+       RowBox[{"2", " ", 
+        SuperscriptBox[
+         RowBox[{"\[Sigma]", "[", "q", "]"}], "2"]}]]}], ")"}]}], 
+   SqrtBox[
+    RowBox[{"2", " ", "\[Pi]"}]]], "+", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox["1", "2"]}], " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", 
+          FractionBox["1", 
+           RowBox[{"2", " ", 
+            RowBox[{"\[Sigma]", "[", "q", "]"}]}]]}], "-", 
+         RowBox[{
+          RowBox[{"Log", "[", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"-", "1"}], "+", 
+             SuperscriptBox["\[ExponentialE]", "\[Epsilon]"], "+", "q"}], 
+            "q"], "]"}], " ", 
+          RowBox[{"\[Sigma]", "[", "q", "]"}]}]}], ")"}], "2"]}]], " ", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      SuperscriptBox["\[ExponentialE]", "\[Epsilon]"], "-", "q"}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"q", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           FractionBox["1", "q"], "-", 
+           FractionBox[
+            RowBox[{
+             RowBox[{"-", "1"}], "+", 
+             SuperscriptBox["\[ExponentialE]", "\[Epsilon]"], "+", "q"}], 
+            SuperscriptBox["q", "2"]]}], ")"}], " ", 
+         RowBox[{"\[Sigma]", "[", "q", "]"}]}], 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", 
+         SuperscriptBox["\[ExponentialE]", "\[Epsilon]"], "+", "q"}]]}], "-", 
+      
+      RowBox[{
+       RowBox[{"Log", "[", 
+        FractionBox[
+         RowBox[{
+          RowBox[{"-", "1"}], "+", 
+          SuperscriptBox["\[ExponentialE]", "\[Epsilon]"], "+", "q"}], "q"], 
+        "]"}], " ", 
+       RowBox[{
+        SuperscriptBox["\[Sigma]", "\[Prime]",
+         MultilineFunction->None], "[", "q", "]"}]}], "+", 
+      FractionBox[
+       RowBox[{
+        SuperscriptBox["\[Sigma]", "\[Prime]",
+         MultilineFunction->None], "[", "q", "]"}], 
+       RowBox[{"2", " ", 
+        SuperscriptBox[
+         RowBox[{"\[Sigma]", "[", "q", "]"}], "2"]}]]}], ")"}]}], 
+   SqrtBox[
+    RowBox[{"2", " ", "\[Pi]"}]]]}]], "Output",
+ CellChangeTimes->{
+  3.90973255882128*^9, 3.9106781287915773`*^9, 3.910760231646179*^9, 
+   3.91189908268592*^9, 3.91325558179412*^9, 3.91558967729029*^9, {
+   3.915590058842864*^9, 3.915590079673379*^9}, 3.915590149977347*^9, 
+   3.915590206988076*^9},
+ CellLabel->"Out[4]=",ExpressionUUID->"7732a01e-cc1e-4dc8-acf5-07c4e6ac8a27"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", "%4", "]"}]], "Input",
+ CellChangeTimes->{{3.915590182159141*^9, 3.915590182267253*^9}},
+ NumberMarks->False,
+ CellLabel->"In[5]:=",ExpressionUUID->"3a8cf766-5f40-4369-9bb6-269df6f6e1a1"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", "2"], " ", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"-", 
+     RowBox[{"Erfc", "[", 
+      FractionBox[
+       RowBox[{"1", "-", 
+        RowBox[{"2", " ", 
+         RowBox[{"Log", "[", 
+          FractionBox[
+           RowBox[{
+            RowBox[{"-", "1"}], "+", 
+            SuperscriptBox["\[ExponentialE]", "\[Epsilon]"], "+", "q"}], "q"],
+           "]"}], " ", 
+         SuperscriptBox[
+          RowBox[{"\[Sigma]", "[", "q", "]"}], "2"]}]}], 
+       RowBox[{"2", " ", 
+        SqrtBox["2"], " ", 
+        RowBox[{"\[Sigma]", "[", "q", "]"}]}]], "]"}]}], "+", 
+    RowBox[{"Erfc", "[", 
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"1", "+", 
+        RowBox[{"2", " ", 
+         RowBox[{"Log", "[", 
+          FractionBox[
+           RowBox[{
+            RowBox[{"-", "1"}], "+", 
+            SuperscriptBox["\[ExponentialE]", "\[Epsilon]"], "+", "q"}], "q"],
+           "]"}], " ", 
+         SuperscriptBox[
+          RowBox[{"\[Sigma]", "[", "q", "]"}], "2"]}]}], 
+       RowBox[{"2", " ", 
+        SqrtBox["2"], " ", 
+        RowBox[{"\[Sigma]", "[", "q", "]"}]}]]}], "]"}], "-", 
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{"-", 
+        FractionBox[
+         RowBox[{"1", "+", 
+          RowBox[{"4", " ", 
+           SuperscriptBox[
+            RowBox[{"Log", "[", 
+             FractionBox[
+              RowBox[{
+               RowBox[{"-", "1"}], "+", 
+               SuperscriptBox["\[ExponentialE]", "\[Epsilon]"], "+", "q"}], 
+              "q"], "]"}], "2"], " ", 
+           SuperscriptBox[
+            RowBox[{"\[Sigma]", "[", "q", "]"}], "4"]}]}], 
+         RowBox[{"8", " ", 
+          SuperscriptBox[
+           RowBox[{"\[Sigma]", "[", "q", "]"}], "2"]}]]}]], " ", 
+      SqrtBox[
+       FractionBox["2", "\[Pi]"]], " ", "q", " ", 
+      SqrtBox[
+       FractionBox[
+        RowBox[{
+         RowBox[{"-", "1"}], "+", 
+         SuperscriptBox["\[ExponentialE]", "\[Epsilon]"], "+", "q"}], "q"]], 
+      " ", 
+      RowBox[{
+       SuperscriptBox["\[Sigma]", "\[Prime]",
+        MultilineFunction->None], "[", "q", "]"}]}], 
+     SuperscriptBox[
+      RowBox[{"\[Sigma]", "[", "q", "]"}], "2"]]}], ")"}]}]], "Output",
+ CellChangeTimes->{
+  3.913256471709271*^9, 3.91558968065829*^9, {3.91559005948549*^9, 
+   3.915590079741848*^9}, 3.9155901500507936`*^9, 3.915590207370393*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"bf1389c1-7adb-4a81-a57c-b41770a80fa9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{"%5", "==", "0"}], ",", " ", 
+   RowBox[{
+    RowBox[{"\[Sigma]", "'"}], "[", "q", "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.9155897084879913`*^9, 3.915589720854624*^9}, {
+  3.915590129320941*^9, 3.915590129487073*^9}, {3.915590187140233*^9, 
+  3.915590196284165*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"4ec6c6fe-7683-4dd2-9153-fe0ac7fce441"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     SuperscriptBox["\[Sigma]", "\[Prime]",
+      MultilineFunction->None], "[", "q", "]"}], "\[Rule]", 
+    RowBox[{"-", 
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["\[ExponentialE]", 
+        RowBox[{
+         FractionBox["1", 
+          RowBox[{"8", " ", 
+           SuperscriptBox[
+            RowBox[{"\[Sigma]", "[", "q", "]"}], "2"]}]], "+", 
+         RowBox[{
+          FractionBox["1", "2"], " ", 
+          SuperscriptBox[
+           RowBox[{"Log", "[", 
+            FractionBox[
+             RowBox[{
+              RowBox[{"-", "1"}], "+", 
+              SuperscriptBox["\[ExponentialE]", "\[Epsilon]"], "+", "q"}], 
+             "q"], "]"}], "2"], " ", 
+          SuperscriptBox[
+           RowBox[{"\[Sigma]", "[", "q", "]"}], "2"]}]}]], " ", 
+       SqrtBox[
+        FractionBox["\[Pi]", "2"]], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Erfc", "[", 
+          FractionBox[
+           RowBox[{"1", "-", 
+            RowBox[{"2", " ", 
+             RowBox[{"Log", "[", 
+              FractionBox[
+               RowBox[{
+                RowBox[{"-", "1"}], "+", 
+                SuperscriptBox["\[ExponentialE]", "\[Epsilon]"], "+", "q"}], 
+               "q"], "]"}], " ", 
+             SuperscriptBox[
+              RowBox[{"\[Sigma]", "[", "q", "]"}], "2"]}]}], 
+           RowBox[{"2", " ", 
+            SqrtBox["2"], " ", 
+            RowBox[{"\[Sigma]", "[", "q", "]"}]}]], "]"}], "-", 
+         RowBox[{"Erfc", "[", 
+          RowBox[{"-", 
+           FractionBox[
+            RowBox[{"1", "+", 
+             RowBox[{"2", " ", 
+              RowBox[{"Log", "[", 
+               FractionBox[
+                RowBox[{
+                 RowBox[{"-", "1"}], "+", 
+                 SuperscriptBox["\[ExponentialE]", "\[Epsilon]"], "+", "q"}], 
+                "q"], "]"}], " ", 
+              SuperscriptBox[
+               RowBox[{"\[Sigma]", "[", "q", "]"}], "2"]}]}], 
+            RowBox[{"2", " ", 
+             SqrtBox["2"], " ", 
+             RowBox[{"\[Sigma]", "[", "q", "]"}]}]]}], "]"}]}], ")"}], " ", 
+       SuperscriptBox[
+        RowBox[{"\[Sigma]", "[", "q", "]"}], "2"]}], 
+      RowBox[{"q", " ", 
+       SqrtBox[
+        FractionBox[
+         RowBox[{
+          RowBox[{"-", "1"}], "+", 
+          SuperscriptBox["\[ExponentialE]", "\[Epsilon]"], "+", "q"}], 
+         "q"]]}]]}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.9155897213890343`*^9, {3.915590060173102*^9, 3.915590079845091*^9}, 
+   3.9155901501213503`*^9, 3.915590207449768*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"a425d556-84f0-48dd-8b06-eefebd17b6a3"]
+}, Open  ]]
+},
+WindowSize->{1917, 1050},
+WindowMargins->{{0, Automatic}, {0, Automatic}},
+FrontEndVersion->"13.3 for Linux x86 (64-bit) (June 3, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"c472e7de-014f-47db-8e64-091fe7c915ba"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 765, 21, 31, "Input",ExpressionUUID->"c4000de4-bd13-49d4-9cf2-35170e8d9c38"],
+Cell[1326, 43, 716, 20, 31, "Input",ExpressionUUID->"0aff67c0-3877-4f92-9fb3-4be8c56979d1"],
+Cell[2045, 65, 886, 24, 31, "Input",ExpressionUUID->"8745fd4d-eeb3-4cbb-b362-37f79aaecc0b"],
+Cell[CellGroupData[{
+Cell[2956, 93, 515, 10, 31, "Input",ExpressionUUID->"d54fd647-c92c-40ad-9da7-29c0a1db5ade"],
+Cell[3474, 105, 5259, 161, 117, "Output",ExpressionUUID->"7732a01e-cc1e-4dc8-acf5-07c4e6ac8a27"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8770, 271, 227, 4, 29, "Input",ExpressionUUID->"3a8cf766-5f40-4369-9bb6-269df6f6e1a1"],
+Cell[9000, 277, 2478, 72, 121, "Output",ExpressionUUID->"bf1389c1-7adb-4a81-a57c-b41770a80fa9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11515, 354, 412, 9, 31, "Input",ExpressionUUID->"4ec6c6fe-7683-4dd2-9153-fe0ac7fce441"],
+Cell[11930, 365, 2661, 74, 102, "Output",ExpressionUUID->"a425d556-84f0-48dd-8b06-eefebd17b6a3"]
+}, Open  ]]
+}
+]
+*)
+
